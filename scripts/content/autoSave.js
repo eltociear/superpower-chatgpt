@@ -320,7 +320,7 @@ function initializeAutoSave(skipInputFormReload = false, forceRefreshIds = []) {
 
                 // remove duplicate conversation from trash folder(to be safe)
                 trashFolder.conversationIds = [...new Set(trashFolder.conversationIds)];
-                // add conversation to the begining of trash folder
+                // add conversation to the beginning of trash folder
                 if (!trashFolder?.conversationIds.includes(localConv.id)) {
                   newConversationsOrder.find((folder) => folder?.id === 'trash')?.conversationIds.unshift(localConv.id);
                 }
@@ -353,7 +353,7 @@ function initializeAutoSave(skipInputFormReload = false, forceRefreshIds = []) {
               if (!allVisibleConversationsOrderIds.includes(remoteConvIds[i])) {
                 if (!conversationsOrder || conversationsOrder.length === 0) { // if conversationsOrder does not exist, add to the end of it right before trash folder (last element -1)
                   newConversationsOrder.splice(newConversationsOrder.length - 1, 0, remoteConvIds[i]);
-                } else { // if conversationsOrder exists, add to the begining of it
+                } else { // if conversationsOrder exists, add to the beginning of it
                   newConversationsOrder.unshift(remoteConvIds[i]);
                 }
               }
